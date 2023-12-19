@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinancControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="500" Width="850">
+    <Grid x:Name="TabList">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFBBBBBB"/>
+                <GradientStop Color="#FFC1C1C1" Offset="0.974"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Column="1" HorizontalAlignment="Center" Height="434" VerticalAlignment="Center" Width="400">
+            <TabItem x:Name="TabList1" Header="Продукты">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF98B395" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FF98B395">
+                    <ListBox x:Name="ListBoxAccount" HorizontalAlignment="Left" Height="386" Margin="10,0,0,0" VerticalAlignment="Center" Width="200" Background="#FF93CC8C"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabList2" Header="Расходы">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF98B395" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FF98B395"/>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="ButtonAddAccount" Content="Добавить" HorizontalAlignment="Center" Height="61" Margin="0,290,0,0" VerticalAlignment="Top" Width="166" Background="#FFFF4545" FontSize="24" FontWeight="Bold"/>
+        <Button Content="Обновить " HorizontalAlignment="Center" Height="38" Margin="0,385,0,0" VerticalAlignment="Top" Width="97" Background="#FF98B395" FontStyle="Italic" FontSize="16"/>
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="33" Margin="164,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxBalance" HorizontalAlignment="Left" Height="33" Margin="164,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" VerticalContentAlignment="Center"/>
+        <Label Content="Название" HorizontalAlignment="Left" Height="25" Margin="79,144,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Баланс" HorizontalAlignment="Left" Height="25" Margin="79,193,0,0" VerticalAlignment="Top" Width="80"/>
+        <RadioButton x:Name="RadioButtonCash" Content="Наличные" HorizontalAlignment="Left" Height="18" Margin="119,257,0,0" VerticalAlignment="Top" Width="91"/>
+        <RadioButton x:Name="RadioButtonCard" Content="Карта" HorizontalAlignment="Left" Height="18" Margin="233,257,0,0" VerticalAlignment="Top" Width="91"/>
 
     </Grid>
 </Window>
